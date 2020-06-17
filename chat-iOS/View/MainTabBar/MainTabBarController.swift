@@ -16,13 +16,14 @@ final class MainTabBarController: UITabBarController, MainTabBarPresenterOutput 
     }
     
     func initMainTabBarController() {
-        let userProfileVC = UIStoryboard(name: "UserProfile", bundle: nil).instantiateInitialViewController()
-        //FIXME:- タブバーアイテムをチャットの画像に変更する
-        userProfileVC?.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag: 1)
-        
         let chatsSelectionVC = UIStoryboard(name: "ChatsSelection", bundle: nil).instantiateInitialViewController()
         //FIXME:- タブバーアイテムをチャットの画像に変更する
+        //設定は以下の式の右辺を `UITabBarItem(title: String, image: UIImage, selectedImage: UIImage)`に変更
         chatsSelectionVC?.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 1)
+        
+        let userProfileVC = UIStoryboard(name: "UserProfile", bundle: nil).instantiateInitialViewController()
+        //FIXME:- タブバーアイテムをpeopleの画像に変更する
+        userProfileVC?.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag: 2)
         
         
         self.setViewControllers([userProfileVC, chatsSelectionVC] as? [UIViewController], animated: true)
