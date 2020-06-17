@@ -18,7 +18,11 @@ final class MainTabBarController: UITabBarController, MainTabBarPresenterOutput 
     }
     
     func initMainTabBarController() {
+        let userProfileVC = UIStoryboard(name: "UserProfile", bundle: nil).instantiateInitialViewController()
+        //FIXME:- タブバーアイテムをチャットの画像に変更する
+        userProfileVC?.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag: 1)
         
+        self.setViewControllers([userProfileVC] as? [UIViewController], animated: true)
     }
     
     func inject(with presenter: MainTabBarPresenterProtocol) {
