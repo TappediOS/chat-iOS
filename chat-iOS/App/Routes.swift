@@ -9,6 +9,11 @@ import UIKit
 
 struct Routes {
     static func decideRootViewController() -> UIViewController {
-        return UIViewController()
+        //TODO:- 認証が済んでいるかどうかでルートVCを変更すること
+        let isSignIn = true
+        
+        if isSignIn { return MainTabBarController() }
+        
+        //return MainTabBarController()
     }
 }
