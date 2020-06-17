@@ -14,6 +14,7 @@ struct Routes {
         
         if isSignIn { return MainTabBarController() }
         
-        //return MainTabBarController()
+        //MARK:- 認証担当の人は上記のisSigneInをfalseにして開発してください。以下のauthTopVC()は自身で実装したVC名に変更してください
+        //return authTopVC()
     }
 }
